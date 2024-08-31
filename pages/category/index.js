@@ -18,14 +18,14 @@ export default function Category(props) {
     title: `${locale.COMMON.CATEGORY} | ${siteInfo?.title}`,
     description: siteInfo?.description,
     image: siteInfo?.pageCover,
-    slug: 'category',
+    slug: 'Category',
     type: 'website'
   }
   return <ThemeComponents.LayoutCategoryIndex {...props} meta={meta} />
 }
 
 export async function getStaticProps() {
-  const props = await getGlobalNotionData({ from: 'category-index-props' })
+  const props = await getGlobalNotionData({ from: 'Category-index-props' })
   delete props.allPages
   return {
     props,
